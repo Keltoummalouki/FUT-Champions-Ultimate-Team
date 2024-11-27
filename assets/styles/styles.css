@@ -1,0 +1,858 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    font-family: 'Poppins';
+    padding: 25px;
+    background-color: black;
+    color: white;
+    font-size: 25px;
+}
+
+body.light {
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+body.dark {
+    background-color: #000000;
+    color: #f9f9f9;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    color: #fff;
+    position: sticky;
+    top: 0;
+}
+
+.navbar .logo {
+    height: 40px;
+}
+
+.theme-btn {
+    border: none;
+    background: none;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    position: relative;
+    height: 120vh;
+}
+
+.stadium {
+    padding: 10px;
+    height: 110vh;
+    width: auto;
+}
+
+.options {
+    padding: 10px;
+}
+
+.background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-gk {
+    position: absolute;
+    top: 79%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+    width: 120px; 
+}
+
+.card-gk-plus {
+    position: absolute;
+    top: 79%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+    width: 50px; 
+    opacity: 75%;
+}
+
+.card-lb {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translate(-50%, -50%);
+    width: 120px; 
+}
+
+.card-lb-plus {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translate(-50%, -50%);
+    width: 50px; 
+    opacity: 75%;
+}
+
+.card-cb-right {
+    position: absolute;
+    top: 60%;
+    left: 26.5%;
+    transform: translate(-50%, -50%);
+    width: 130px; 
+}
+
+.card-cb-right-plus {
+    position: absolute;
+    top: 60%;
+    left: 26.5%;
+    transform: translate(-50%, -50%);
+    width: 130px; 
+    width: 50px; 
+    opacity: 75%;
+}
+
+
+.card-cb-left {
+    position: absolute;
+    top: 60%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+    width: 130px; 
+}
+
+.card-cb-left-plus {
+    position: absolute;
+    top: 60%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+    width: 130px; 
+    width: 50px; 
+    opacity: 75%;
+}
+
+.card-rw {
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    width: 130px; 
+}
+
+.card-rw-plus {
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    width: 50px; 
+    opacity: 75%;
+}
+
+.card-cm-left {
+    position: absolute;
+    top: 36%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 130px; 
+}
+
+.card-cm-left-plus {
+    position: absolute;
+    top: 36%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px; 
+    opacity: 75%;
+}
+
+.card-cm-centre {
+    position: absolute;
+    top: 41%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+    width: 130px; 
+}
+
+.card-cm-centre-plus {
+    position: absolute;
+    top: 42%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+    width: 50px; 
+    opacity: 75%;
+}
+
+.card-cm-right {
+    position: absolute;
+    top: 36%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    width: 130px; 
+}
+
+.card-cm-right-plus {
+    position: absolute;
+    top: 36%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    width: 50px; 
+    opacity: 75%;
+}
+
+.card-rb {
+    position: absolute;
+    top: 15%;
+    left: 54%;
+    transform: translate(-50%, -50%);
+    width: 130px; 
+}
+
+.card-rb-plus {
+    position: absolute;
+    top: 15%;
+    left: 54%;
+    transform: translate(-50%, -50%);
+    width: 50px; 
+    opacity: 75%;
+}
+
+.card-st {
+    position: absolute;
+    top: 11.5%;
+    left: 36%;
+    transform: translate(-50%, -50%);
+    width: 130px; 
+}
+
+.card-st-plus {
+    position: absolute;
+    top: 12.5%;
+    left: 36%;
+    transform: translate(-50%, -50%);
+    width: 50px; 
+    opacity: 75%;
+}
+
+.card-lw {
+    position: absolute;
+    top: 15%;
+    left: 14%;
+    transform: translate(-50%, -50%);
+    width: 130px; 
+}
+
+.card-lw-plus {
+    position: absolute;
+    top: 15%;
+    left: 14%;
+    transform: translate(-50%, -50%);
+    width: 50px; 
+    opacity: 75%;
+}
+
+.options-container {
+    width: 90%;
+    height: 105vh;
+    max-width: 400px;
+    margin: auto 0px 20px auto;
+    background-color: #222;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+}
+
+.section {
+    margin-bottom: 20px;
+}
+
+.section h2 {
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.section select {
+    width: 100%;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #444;
+    border-radius: 5px;
+}
+
+.section p {
+    margin-top: 10px;
+    font-size: 12px;
+    color: #bbb;
+    line-height: 1.5;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: #444;
+    margin: 20px 0;
+}
+
+.add-button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color: #107d01;
+    color: #f7f7f7;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.add-button:hover {
+    background-color: #e0e0e0; 
+}
+
+.show-button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color: #002aff;
+    color: #f7f7f7;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.show-button:hover {
+    background-color: #e0e0e0; 
+}
+
+.form-popup {
+    display: none;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 90vh;
+    width: 400px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.8); 
+    z-index: 1000;
+    padding: 20px;
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+
+form::-webkit-scrollbar {
+    display: none;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    color: #333;
+    cursor: pointer;
+    background: none;
+    border: none;
+    outline: none;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+}
+
+.form h2 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 35px;
+    color: #002aff;
+}
+
+.form-elements label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+
+.form-elements input,
+.form-elements select {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    outline: none;
+    box-sizing: border-box;
+    
+}
+
+.upload-img-container {
+    display: flex;
+    position: relative;
+}
+
+.upload-img-photo {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    width: 33%;
+    align-items: center;
+}
+
+.upload-img-flag {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    width: 33%;
+    align-items: center;}
+
+.upload-img-logo {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    width: 33%;
+    align-items: center;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 30px 30px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.custom-file-upload:hover {
+    background-color: #007bff; 
+}
+
+.form-elements input:focus,
+.form-elements select:focus {
+    border-color: #007bff;
+}
+
+.form-elements
+.submit-form-btn {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #002aff;
+    color: #f7f7f7;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 25px;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #e0e0e0; 
+}
+
+.volume-control {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    padding: 5px;
+    margin-top: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    font-size: 18px;
+    display: block;
+    margin-right: 5px;
+}
+
+input[type="range"] {
+    width: 290px;
+    appearance: none;
+    height: 1px;
+    background: #ffffff;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 24px;
+    height: 24px;
+    background: #007bff;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 10px;
+    height: 19px;
+    background: #6a00ff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#volume-level {
+    display: block;
+    margin-left: 10px;
+    font-size: 15px;
+    color: #e2e2e2;
+}
+
+.label-position {
+    position: absolute;
+
+}
+
+.volume-level {
+    margin-left: 80px;
+}
+
+body::before {
+    content: "";
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.form-popup.active {
+    display: block;
+}
+
+body.popup-active::before {
+    display: block;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: rgb(255, 255, 255);
+}
+
+.card {
+    height: 130px;
+}
+
+.formation {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap : 5%;
+}
+
+.upload-status-icon {
+    font-size: 18px;
+    margin-left: 10px;
+    vertical-align: middle;
+    color: red;
+}
+
+
+.custom-file-upload:hover {
+    background-color: #0056b3;
+}
+
+#errorMessages {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    border-radius: 5px;
+}
+
+#errorMessages p {
+    margin: 0;
+    padding: 5px 0;
+}
+
+
+@media (max-width: 320px) {
+    body{
+        padding: 0;
+    }
+
+    .navbar{
+        padding: 0;
+
+    }
+
+    .card {
+        height: 55px;
+    }
+    .container {
+        display: grid;
+        grid-template-columns: 2fr;
+        position: relative;
+        height: 120vh;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    
+    .stadium {
+        display: grid;
+        grid-template-columns: 2fr;
+        margin-left: 0px;
+        margin-right: 0px;
+        height: 60vh;
+        width: 75vh;
+    }
+    
+    .options {
+        padding: 10px;
+    }
+    
+    .background-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .card-gk {
+        position: absolute;
+        top: 44.5%;
+        left: 64%;
+        height: 70px;
+        width: 70px;
+    }
+    
+    .card-gk-plus {
+        position: absolute;
+        top: 44.5%;
+        left: 64%;
+        width: 20px; 
+        opacity: 75%;
+    }
+    
+    .card-lb {
+        position: absolute;
+        top: 29%;
+        left: 14%;
+        height: 70px;
+        width: 70px;
+    }
+    
+    .card-lb-plus {
+        position: absolute;
+        top: 29%;
+        left: 14%;
+        width: 20px; 
+        opacity: 75%;
+    }
+    
+    .card-cb-right {
+        position: absolute;
+        top: 33%;
+        left: 45%;
+        height: 70px;
+        width: 70px;
+    }
+    
+    .card-cb-right-plus {
+        position: absolute;
+        top: 33%;
+        left: 45%;
+        width: 130px; 
+        width: 20px; 
+        opacity: 75%;
+    }
+    
+    .card-cb-left {
+        position: absolute;
+        top: 33%;
+        left: 85%;
+        height: 70px;
+        width: 70px;
+    }
+    
+    .card-cb-left-plus {
+        position: absolute;
+        top: 33%;
+        left: 85%;
+        width: 130px; 
+        width: 20px; 
+        opacity: 75%;
+    }
+    
+    .card-rb {
+        position: absolute;
+        top: 29%;
+        left: 114%;
+        height: 70px;
+        width: 70px;
+        }
+    
+    .card-rb-plus {
+        position: absolute;
+        top: 29%;
+        left: 114%;
+        width: 20px; 
+        opacity: 75%;
+    }
+    
+    .card-cm-left {
+        position: absolute;
+        top: 20%;
+        left: 95%;
+        height: 70px;
+        width: 70px;
+        }
+    
+    .card-cm-left-plus {
+        position: absolute;
+        top: 20%;
+        left: 95%;
+        width: 20px; 
+        opacity: 75%;
+    }
+    
+    .card-cm-centre {
+        position: absolute;
+        top: 20%;
+        left: 64%;
+        height: 70px;
+        width: 70px;
+        }
+    
+    .card-cm-centre-plus {
+        position: absolute;
+        top: 20%;
+        left: 64%;
+        width: 20px; 
+        opacity: 75%;
+    }
+    
+    .card-cm-right {
+        position: absolute;
+        top: 20%;
+        left: 35%;
+        height: 70px;
+        width: 70px;
+        }
+    
+    .card-cm-right-plus {
+        position: absolute;
+        top: 20%;
+        left: 35%;
+        width: 20px; 
+        opacity: 75%;
+    }
+    
+    .card-rw {
+        position: absolute;
+        top: 7%;
+        left: 95%;
+        height: 70px;
+        width: 70px;
+    }
+    
+    .card-rw-plus {
+        position: absolute;
+        top: 7%;
+        left: 95%;
+        width: 20px; 
+        opacity: 75%;
+    }
+
+    .card-st {
+        position: absolute;
+        top: 6%;
+        left: 64%;
+        height: 70px;
+        width: 70px; 
+    }
+    
+    .card-st-plus {
+        position: absolute;
+        top: 6%;
+        left: 65%;
+        width: 20px; 
+        opacity: 75%;
+    }
+    
+    .card-lw {
+        position: absolute;
+        top: 7%;
+        left: 35%;
+        height: 70px;
+        width: 70px;    
+    }
+    
+    .card-lw-plus {
+        position: absolute;
+        top: 7%;
+        left: 35%;
+        width: 20px; 
+        opacity: 75%;
+    }
+    .section {
+        height: 140px;
+    }
+    .section p {
+        font-size: 10px;
+    }
+
+}
+
+@media (max-width: 357px) {
+    body{
+        padding: 0;
+    }
+}
+
+@media (max-width: 425px) {
+    body{
+        padding: 0;
+    }
+
+}
+
+@media (max-width: 768px) {
+    body{
+        padding: 0;
+    }
+}
