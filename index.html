@@ -90,6 +90,7 @@
                                         <label for="file-upload-photo" class="custom-file-upload">Photo</label>
                                         <input id="file-upload-photo" type="file" onchange="updateIcon(this, 'photo-icon')" />
                                         <span id="photo-icon" class="upload-status-icon">❌</span>
+                                        
                                     </div>
                                 </div>
                                 
@@ -115,8 +116,17 @@
                                     </div>
                                 </div>
                             </div>
-                            <label for="name">Name</label>
-                            <input type="text" id="name" placeholder="Enter player name">
+                            <div class="name-rate-input">
+                                <div class="input-name">
+                                    <label for="name">Name</label>
+                                    <input type="text" id="name" placeholder="Enter player name">
+                                    <span class="error-message" id="error-name"></span>                                </div>
+                                <div>
+                                    <label for="rating">Rating</label>
+                                    <input type="number" id="rating" name="rating" min="1" max="99" class="inputs"
+                                    placeholder="Rating">
+                                    <span class="error-message" id="error-rating"></span>                            </div>
+                            </div>
                             <label for="position">Position</label>
                             <select id="position">
                                 <option>Defender central (CB)</option>
@@ -172,45 +182,40 @@
                                 <option value="tottenham">Tottenham Hotspur</option>
                             </select>
 
-                            <div class="formation">
-                                <div>
-                                    <label for="rating">Rating</label>
-                                    <input type="number" id="rating" name="rating" min="1" max="99" class="inputs"
-                                    placeholder="Rating">
-                                    <span></span>
-                                </div>
+                            <div class="stats-form">
                                 <div>
                                     <label for="pace">pace</label>
                                     <input type="number" id="pace" name="pace" min="1" max="100" placeholder="Pace" class="inputs">
-                                </div>
+                                    <span class="error-message" id="error-pace"></span>                                </div>
+                                
                                 <div>
                                     <label for="shooting">shooting</label>
                                     <input type="number" id="shooting" name="shooting" min="1" max="99" class="inputs"
                                         placeholder="Shooting">
-                                </div>
+                                        <span class="error-message" id="error-shooting"></span>                                    </div>
                                 <div>
                                     <label for="passing">passing</label>
                                     <input type="number" id="passing" name="passing" min="1" max="99" class="inputs"
                                         placeholder="Passing">
-                                </div>
+                                        <span class="error-message" id="error-passing"></span>                                    </div>
                                 <div>
                                     <label for="dribbling">dribbling</label>
                                     <input type="number" id="dribbling" name="dribbling" min="1" max="99" class="inputs"
                                         placeholder="Dribbling">
-                                </div>
+                                        <span class="error-message" id="error-dribbling"></span>                                </div>
                                 <div>
                                     <label for="defending">defending</label>
                                     <input type="number" id="defending" name="defending" min="1" max="99" class="inputs"
                                     placeholder="Defending">
+                                    <span class="error-message" id="error-defending"></span>
                                 </div>
                                 <div>
                                     <label for="physical">physical</label>
                                     <input type="number" id="physical" name="physical" min="1" max="99" class="inputs"
                                     placeholder="Physical">
-                                </div>
+                                    <span class="error-message" id="error-physical"></span>                                </div>
                             </div>
                             <div id="errorMessages"></div>
-
                             <button type="submit" id="submit-form-btn" class="submit-form-btn" onclick="validateForm()">Add player</button>
                         </div>
                     </div>

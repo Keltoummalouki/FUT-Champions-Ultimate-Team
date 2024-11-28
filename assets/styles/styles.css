@@ -457,6 +457,19 @@ input[type="file"] {
     border-color: #007bff;
 }
 
+.name-rate-input {
+    display: flex;
+}
+
+.input-name {
+    flex: 7;
+    margin-right: 10px;
+}
+
+#rating {
+    flex: 3;
+}
+
 .form-elements
 .submit-form-btn {
     width: 100%;
@@ -477,67 +490,6 @@ input[type="file"] {
     background-color: #e0e0e0; 
 }
 
-.volume-control {
-    display: flex;
-    align-items: center;
-    text-align: center;
-    width: 100%;
-    padding: 5px;
-    margin-top: 15px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-label {
-    font-size: 18px;
-    display: block;
-    margin-right: 5px;
-}
-
-input[type="range"] {
-    width: 290px;
-    appearance: none;
-    height: 1px;
-    background: #ffffff;
-    border-radius: 20px;
-    cursor: pointer;
-}
-
-input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    width: 24px;
-    height: 24px;
-    background: #007bff;
-    border-radius: 50%;
-    cursor: pointer;
-    border: 2px solid #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-input[type="range"]::-moz-range-thumb {
-    width: 10px;
-    height: 19px;
-    background: #6a00ff;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-}
-
-#volume-level {
-    display: block;
-    margin-left: 10px;
-    font-size: 15px;
-    color: #e2e2e2;
-}
-
-.label-position {
-    position: absolute;
-
-}
-
-.volume-level {
-    margin-left: 80px;
-}
 
 body::before {
     content: "";
@@ -578,9 +530,9 @@ body.popup-active::before {
     height: 130px;
 }
 
-.formation {
+.stats-form {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr ;
     gap : 5%;
 }
 
@@ -596,22 +548,15 @@ body.popup-active::before {
     background-color: #0056b3;
 }
 
-#errorMessages {
-    margin-top: 20px;
-    padding: 10px;
-    background-color: #f8d7da;
-    color: #721c24;
-    border: 1px solid #f5c6cb;
-    border-radius: 5px;
-}
-
-#errorMessages p {
-    margin: 0;
-    padding: 5px 0;
+.error-message {
+    color: red;
+    font-size: 10px;
+    margin-top: 5px;
+    display: block;
 }
 
 
-@media (max-width: 320px) {
+@media (max-width: 426px) {
     body{
         padding: 0;
     }
@@ -650,12 +595,13 @@ body.popup-active::before {
         width: 100%;
         height: 100%;
         object-fit: cover;
+        position: relative;
     }
     
     .card-gk {
         position: absolute;
         top: 44.5%;
-        left: 64%;
+        left: 48%;
         height: 70px;
         width: 70px;
     }
@@ -663,7 +609,7 @@ body.popup-active::before {
     .card-gk-plus {
         position: absolute;
         top: 44.5%;
-        left: 64%;
+        left: 48%;
         width: 20px; 
         opacity: 75%;
     }
@@ -838,21 +784,3 @@ body.popup-active::before {
 
 }
 
-@media (max-width: 357px) {
-    body{
-        padding: 0;
-    }
-}
-
-@media (max-width: 425px) {
-    body{
-        padding: 0;
-    }
-
-}
-
-@media (max-width: 768px) {
-    body{
-        padding: 0;
-    }
-}

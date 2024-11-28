@@ -19,7 +19,6 @@ const popup = document.querySelector('.form-popup');
 const closeBtn = document.querySelector('.close-btn');
 function openPopup() {
     popup.classList.add('active');
-    console.log(popup)
     document.body.classList.add('popup-active');
 }
 closeBtn.addEventListener('click', () => {
@@ -91,74 +90,94 @@ document.addEventListener("DOMContentLoaded", () => {
     const addPlayerBtn = document.querySelector('.add-button');
     const errorMessages = document.getElementById('errorMessages');
 
-    // Load saved data from localStorage
     loadSavedData();
 
-    // Open popup
     addPlayerBtn.addEventListener("click", () => {
         popup.classList.add('active');
         document.body.classList.add('popup-active');
     });
 
-    // Close popup
     closeBtn.addEventListener("click", () => {
         popup.classList.remove('active');
         document.body.classList.remove('popup-active');
     });
 
-    // Validate form and save data
     document.getElementById('submit-form-btn').addEventListener('click', (e) => {
-        e.preventDefault(); // Prevent form submission
+        e.preventDefault();
         if (validateForm()) {
             savePlayerData();
         }
     });
 
-    // Fetch players from JSON
     fetchPlayersFromJSON();
 });
 
 function validateForm() {
-    const errorMessages = document.getElementById('errorMessages');
-    errorMessages.innerHTML = '';
-    const errors = [];
+
+    document.querySelectorAll('.error-message').forEach(span => {
+        span.innerText = '';
+    });
+
+    let errors = false;
 
     const name = document.getElementById('name').value.trim();
-    if (!name) errors.push('Name is required.');
+    if (!name) {
+        document.getElementById('error-name').innerText = 'Name is required.';
+        errors = true;
+    }
 
     const position = document.getElementById('position').value;
-    const nationality = document.getElementById('nationality').value;
-    const club = document.getElementById('club').value;
-    if (!position) errors.push('Please select a position.');
-    if (!nationality) errors.push('Please select a nationality.');
-    if (!club) errors.push('Please select a club.');
+    if (!position) {
+        document.getElementById('error-position').innerText = 'Position is required.';
+        errors = true;
+    }
 
-    const numericFields = ['rating', 'pace', 'shooting', 'passing', 'dribbling', 'defending', 'physical'];
-    numericFields.forEach((field) => {
+    const nationality = document.getElementById('nationality').value;
+    if (!nationality) {
+        document.getElementById('error-nationality').innerText = 'Nationality is required.';
+        errors = true;
+    }
+
+    const club = document.getElementById('club').value;
+    if (!club) {
+        document.getElementById('error-club').innerText = 'Club is required.';
+        errors = true;
+    }
+
+    const numericFields = ['pace', 'shooting', 'passing', 'dribbling', 'defending', 'physical', 'rating'];
+    numericFields.forEach(field => {
         const value = document.getElementById(field).value;
         if (!value || value < 1 || value > 99) {
-            errors.push(`${field.charAt(0).toUpperCase() + field.slice(1)} must be between 1 and 99.`);
+            document.getElementById(`error-${field}`).innerText = `${field.charAt(0).toUpperCase() + field.slice(1)} must be between 1 and 99.`;
+            errors = true;
         }
     });
 
-    const photo = document.querySelector('.upload-img-photo input[type="file"]').files.length;
-    const flag = document.querySelector('.upload-img-flag input[type="file"]').files.length;
-    const logo = document.querySelector('.upload-img-logo input[type="file"]').files.length;
-    if (!photo) errors.push('Player photo is required.');
-    if (!flag) errors.push('Nationality flag is required.');
-    if (!logo) errors.push('Club logo is required.');
+    const validateFile = (id, errorId, fieldName) => {
+        const fileInput = document.getElementById(id);
+        const file = fileInput?.files[0];
+        if (!file) {
+            document.getElementById(errorId).innerText = `${fieldName} is required.`;
+            errors = true;
+        } else if (!file.name.toLowerCase().endsWith('.png')) {
+            document.getElementById(errorId).innerText = `${fieldName} must be a PNG file.`;
+            errors = true;
+        }
+    };
 
-    if (errors.length > 0) {
-        errors.forEach((error) => {
-            const errorItem = document.createElement('p');
-            errorItem.textContent = error;
-            errorItem.style.color = 'red';
-            errorMessages.appendChild(errorItem);
-        });
+    validateFile('photo', 'error-photo', 'Player Photo');
+    validateFile('flag', 'error-flag', 'Nationality Flag');
+    validateFile('logo', 'error-logo', 'Club Logo');
+
+    if (errors) {
         return false;
     }
+
+    alert('Form submitted successfully!');
     return true;
 }
+
+
 
 function savePlayerData() {
     const player = {
@@ -175,7 +194,6 @@ function savePlayerData() {
         physical: document.getElementById('physical').value,
     };
 
-    // Save data to localStorage
     let players = JSON.parse(localStorage.getItem('players')) || [];
     players.push(player);
     localStorage.setItem('players', JSON.stringify(players));
@@ -185,18 +203,85 @@ function savePlayerData() {
 
 function loadSavedData() {
     const players = JSON.parse(localStorage.getItem('players'));
-    if (players) {
-        console.log("Loaded Players:", players); // You can populate the UI with this data.
-    }
+    // if (players) {
+    //     console.log("Loaded Players:", players); 
+    // }
 }
 
 function fetchPlayersFromJSON() {
-    fetch('players.json') // Adjust the path if necessary
+    fetch('players.json')
         .then((response) => response.json())
         .then((data) => {
-            console.log("Fetched Players:", data.players); // Populate your app with fetched data
+            console.log("Fetched Players:", data.players);
         })
         .catch((error) => console.error('Error fetching JSON:', error));
 }
 
+
+document.getElementById("position").addEventListener("change", function () {
+    const position = this.value;
+    const numericFieldsContainer = document.querySelector(".formation");
+    const goalkeeperFields = `
+        <div>
+            <label for="diving">Diving</label>
+            <input type="number" id="diving" name="diving" min="1" max="99" class="inputs" placeholder="Diving">
+        </div>
+        <div>
+            <label for="handling">Handling</label>
+            <input type="number" id="handling" name="handling" min="1" max="99" class="inputs" placeholder="Handling">
+        </div>
+        <div>
+            <label for="kicking">Kicking</label>
+            <input type="number" id="kicking" name="kicking" min="1" max="99" class="inputs" placeholder="Kicking">
+        </div>
+        <div>
+            <label for="reflexes">Reflexes</label>
+            <input type="number" id="reflexes" name="reflexes" min="1" max="99" class="inputs" placeholder="Reflexes">
+        </div>
+        <div>
+            <label for="speed">Speed</label>
+            <input type="number" id="speed" name="speed" min="1" max="99" class="inputs" placeholder="Speed">
+        </div>
+        <div>
+            <label for="positioning">Positioning</label>
+            <input type="number" id="positioning" name="positioning" min="1" max="99" class="inputs" placeholder="Positioning">
+        </div>
+    `;
+
+    if (position === "Goalkeeper (GK)") {
+        numericFieldsContainer.innerHTML = goalkeeperFields;
+    } else {
+        const defaultFields = `
+            <div>
+                <label for="rating">Rating</label>
+                <input type="number" id="rating" name="rating" min="1" max="99" class="inputs" placeholder="Rating">
+            </div>
+            <div>
+                <label for="pace">Pace</label>
+                <input type="number" id="pace" name="pace" min="1" max="99" class="inputs" placeholder="Pace">
+            </div>
+            <div>
+                <label for="shooting">Shooting</label>
+                <input type="number" id="shooting" name="shooting" min="1" max="99" class="inputs" placeholder="Shooting">
+            </div>
+            <div>
+                <label for="passing">Passing</label>
+                <input type="number" id="passing" name="passing" min="1" max="99" class="inputs" placeholder="Passing">
+            </div>
+            <div>
+                <label for="dribbling">Dribbling</label>
+                <input type="number" id="dribbling" name="dribbling" min="1" max="99" class="inputs" placeholder="Dribbling">
+            </div>
+            <div>
+                <label for="defending">Defending</label>
+                <input type="number" id="defending" name="defending" min="1" max="99" class="inputs" placeholder="Defending">
+            </div>
+            <div>
+                <label for="physical">Physical</label>
+                <input type="number" id="physical" name="physical" min="1" max="99" class="inputs" placeholder="Physical">
+            </div>
+        `;
+        numericFieldsContainer.innerHTML = defaultFields;
+    }
+});
 
