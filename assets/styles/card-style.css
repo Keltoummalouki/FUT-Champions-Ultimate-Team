@@ -3,8 +3,6 @@
 }
 
 body {
-    font-family: 'Poppins';
-    background-color: #f4f4f4;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13,6 +11,7 @@ body {
 }
 
 .card {
+    font-family: 'Poppins';
     width: 130px;
     height: 200px;
     background: url('../media/images/badge_total_rush.webp') no-repeat center/cover;
@@ -24,13 +23,13 @@ body {
 }
 
 .photo {
-    width: 168px;
+    width: 169px;
     height: 80px;
     border-radius: 10%;
     overflow: hidden;
     position: relative;
-    top: 24%;
-    left: -16.5%;
+    top: 24.5%;
+    left: -17%;
 }
 
 .photo img {
