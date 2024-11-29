@@ -3,7 +3,7 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins';
     background-color: #f4f4f4;
     display: flex;
     justify-content: center;
@@ -13,8 +13,8 @@ body {
 }
 
 .card {
-    width: 300px;
-    height: 500px;
+    width: 130px;
+    height: 200px;
     background: url('../media/images/badge_total_rush.webp') no-repeat center/cover;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     position: relative;
@@ -24,13 +24,13 @@ body {
 }
 
 .photo {
-    width: 425px;
-    height: 225px;
+    width: 168px;
+    height: 80px;
     border-radius: 10%;
     overflow: hidden;
     position: relative;
-    top: 19%;
-    left: -23.5%;
+    top: 24%;
+    left: -16.5%;
 }
 
 .photo img {
@@ -41,10 +41,10 @@ body {
 #name-place {
     display: flex;
     justify-content: center;
-    font-size: 24px;
+    font-size: 9px;
     font-weight: bold;
     position: absolute;
-    top: 63.5%;
+    top: 61.5%;
     margin: 5px 0;
     width: 100%;
 }
@@ -55,51 +55,61 @@ body {
 }
 
 .position {
-    font-size: 20px;
+    font-size: 8px;
     font-weight: bold;
     margin-bottom: 10px;
     position: absolute;
     top: 29%;
-    left: 12.5%;
+    left: 13.5%;
 }
 
 .rat-rate {
-    font-size: 50px;
+    font-size: 20px;
     font-weight: bold;
     padding: 0;
     margin: 0;
     position: absolute;
-    top: 20%;
-    left: 7%;
+    top: 18%;
+    left: 9%;
 }
 
 .flag{
     position: absolute;
     top: 20.5%;
-    left: 82%;
-    width: 40px;
-    height: 40px;
+    left: 80%;
+    width: 15px;
+    height: 15px;
 
 }
+
 .logo {
     position: absolute;
     top: 20.5%;
     left: 66%;
-    width: 40px;
-    height: 40px;
+    width: 15px;
+    height: 15px;
 
 }
 
 .stats {
-    display: flex;    
-    grid-template-columns: 1fr 1fr;
-    position: relative;
-    top: 26.5%;
-    left: 8.5%;
+    display: flex;  
+    width: 90%;
+    position: absolute;
+    top: 71%;
+    left: 13%;
+
 }
 
 #stats-1 {
     flex: 1;
+}
+
+.line-img {
+    width: 24.5px;
+    position: absolute;
+    top: 0%;
+    left: 31%;
+
 }
 
 #stats-2 {
@@ -110,7 +120,7 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr; 
     text-align: left;
-    font-size: 18px;
+    font-size: 5.5px;
     font-weight: bold;
     position: relative;
 }
