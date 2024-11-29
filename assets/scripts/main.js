@@ -60,7 +60,7 @@ function validateForm() {
     if (!logo) errors.push('Club logo is required.');
 
     if (errors.length > 0) {
-        errors.forEach((error) => {
+        errors.forEach(error => {
             const errorItem = document.createElement('p');
             errorItem.textContent = error;
             errorItem.style.color = 'red';
