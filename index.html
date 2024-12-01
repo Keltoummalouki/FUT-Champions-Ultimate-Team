@@ -74,196 +74,271 @@
         <div class="options">
             <div class="options-container">
                 <div>
-                    <button class="add-button" onclick="openPopup()">Add a new player</button>
+                <button class="add-button" onclick="openPopup()">Add a new player</button>
                 </div>
                 <div class="form-popup">
-                    <button class="close-btn">&times;</button>
-                    <div class="form">
-                        <h2>Player information</h2>
-                        <div class="form-elements">
-                            <div class="upload-img-container">
-                                <div class="upload-img-photo">
-                                    <div>
-                                        <label for="photo">Player Photo</label>
-                                    </div>
-                                    <div>
-                                        <label for="file-upload-photo" class="custom-file-upload">Photo</label>
-                                        <input id="file-upload-photo" type="file" onchange="updateIcon(this, 'photo-icon')" />
-                                        <span id="photo-icon" class="upload-status-icon">❌</span>
-                                        
-                                    </div>
-                                </div>
-                                
-                                <div class="upload-img-flag">
-                                    <div>
-                                        <label for="flag">Nationality Flag</label>
-                                    </div>
-                                    <div>
-                                        <label for="file-upload-flag" class="custom-file-upload">Flag</label>
-                                        <input id="file-upload-flag" type="file" onchange="updateIcon(this, 'flag-icon')" />
-                                        <span id="flag-icon" class="upload-status-icon">❌</span>
-                                    </div>
-                                </div>
-                                
-                                <div class="upload-img-logo">
-                                    <div>
-                                        <label for="logo">Club Logo</label>
-                                    </div>
-                                    <div>
-                                        <label for="file-upload-logo" class="custom-file-upload">Logo</label>
-                                        <input id="file-upload-logo" type="file" onchange="updateIcon(this, 'logo-icon')" />
-                                        <span id="logo-icon" class="upload-status-icon">❌</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="name-rate-input">
-                                <div class="input-name">
-                                    <label for="name">Name</label>
-                                    <input type="text" id="name" placeholder="Enter player name">
-                                    <span class="error-message" id="error-name"></span>                                </div>
-                                <div>
-                                    <label for="rating">Rating</label>
-                                    <input type="number" id="rating" name="rating" min="1" max="99" class="inputs"
-                                    placeholder="Rating">
-                                    <span class="error-message" id="error-rating"></span>                            </div>
-                            </div>
-                            <label for="position">Position</label>
-                            <select id="position">
-                                <option>Defender central (CB)</option>
-                                <option>Defender full-back left (LB)</option>
-                                <option>Defender full-back right (RB)</option>
-                                <option>Defender Midfielder central (CM)</option>
-                                <option>Defender attacking midfielder (CM)</option>
-                                <option>Central striker (ST)</option>
-                                <option>Winger left (LW)</option>
-                                <option>Winger right (RW)</option>
-                                <option onclick="goalkeeper()">Goalkeeper (GK)</option>
-                            </select>
-                            <label for="nationality">Nationality</label>
-                            <select id="nationality">
-                                <option value="afghanistan">Afghanistan</option>
-                                <option value="albania">Albania</option>
-                                <option value="algeria">Algeria</option>
-                                <option value="argentina">Argentina</option>
-                                <option value="australia">Australia</option>
-                                <option value="brazil">Brazil</option>
-                                <option value="canada">Canada</option>
-                                <option value="china">China</option>
-                                <option value="egypt">Egypt</option>
-                                <option value="france">France</option>
-                                <option value="germany">Germany</option>
-                                <option value="india">India</option>
-                                <option value="italy">Italy</option>
-                                <option value="japan">Japan</option>
-                                <option value="mexico">Mexico</option>
-                                <option value="morocco">Morocco</option>
-                                <option value="russia">Russia</option>
-                                <option value="saudi-arabia">Saudi Arabia</option>
-                                <option value="spain">Spain</option>
-                                <option value="united-states">United States</option>
-                            </select>
-                            <label for="club">Club</label>
-                            <select id="club">
-                                <option value="real-madrid">Real Madrid</option>
-                                <option value="barcelona">FC Barcelona</option>
-                                <option value="manchester-united">Manchester United</option>
-                                <option value="manchester-city">Manchester City</option>
-                                <option value="bayern-munich">Bayern Munich</option>
-                                <option value="paris-saint-germain">Paris Saint-Germain (PSG)</option>
-                                <option value="liverpool">Liverpool FC</option>
-                                <option value="chelsea">Chelsea FC</option>
-                                <option value="juventus">Juventus</option>
-                                <option value="inter-milan">Inter Milan</option>
-                                <option value="ac-milan">AC Milan</option>
-                                <option value="arsenal">Arsenal FC</option>
-                                <option value="ajax">Ajax</option>
-                                <option value="atletico-madrid">Atlético Madrid</option>
-                                <option value="dortmund">Borussia Dortmund</option>
-                                <option value="tottenham">Tottenham Hotspur</option>
-                            </select>
+                <button class="close-btn">&times;</button>
+                <div class="form">
+                    <h2>Player information</h2>
+                    <div class="form-elements">
+                    <div class="upload-img-container">        
+                        <div class="upload-img-flag">
+                        <div>
+                            <label for="flag">Nationality Flag</label>
+                        </div>
+                        <div>
+                            <label for="file-upload-flag" class="custom-file-upload"
+                            >Flag</label
+                            >
+                            <input id="file-upload-flag" type="file" />
+                            <span id="flag-icon-error" class="error-message"></span>
+                        </div>
 
-                            <div class="stats-form">
-                                <div>
-                                    <label for="pace">pace</label>
-                                    <input type="number" id="pace" name="pace" min="1" max="100" placeholder="Pace" class="inputs">
-                                    <span class="error-message" id="error-pace"></span>                                </div>
-                                
-                                <div>
-                                    <label for="shooting">shooting</label>
-                                    <input type="number" id="shooting" name="shooting" min="1" max="99" class="inputs"
-                                        placeholder="Shooting">
-                                        <span class="error-message" id="error-shooting"></span>                                    </div>
-                                <div>
-                                    <label for="passing">passing</label>
-                                    <input type="number" id="passing" name="passing" min="1" max="99" class="inputs"
-                                        placeholder="Passing">
-                                        <span class="error-message" id="error-passing"></span>                                    </div>
-                                <div>
-                                    <label for="dribbling">dribbling</label>
-                                    <input type="number" id="dribbling" name="dribbling" min="1" max="99" class="inputs"
-                                        placeholder="Dribbling">
-                                        <span class="error-message" id="error-dribbling"></span>                                </div>
-                                <div>
-                                    <label for="defending">defending</label>
-                                    <input type="number" id="defending" name="defending" min="1" max="99" class="inputs"
-                                    placeholder="Defending">
-                                    <span class="error-message" id="error-defending"></span>
-                                </div>
-                                <div>
-                                    <label for="physical">physical</label>
-                                    <input type="number" id="physical" name="physical" min="1" max="99" class="inputs"
-                                    placeholder="Physical">
-                                    <span class="error-message" id="error-physical"></span>                                </div>
-                            </div>
-                            <div id="errorMessages"></div>
-                            <button type="submit" id="submit-form-btn" class="submit-form-btn" onclick="validateForm()">Add player</button>
+                        </div>
+            
+                        <div class="upload-img-logo">
+                        <div>
+                            <label for="logo">Club Logo</label>
+                        </div>
+                        <div>
+                            <label for="file-upload-logo" class="custom-file-upload"
+                            >Logo</label
+                            >
+                            <input id="file-upload-logo" type="file" />
+                            <span id="logo-icon-error" class="error-message"></span>
+                        </div>
                         </div>
                     </div>
-                </div>
+                    <div>
+                        <label for="photo">Player photo</label>
+                        <input type="url" placeholder="Player photo URL" id="photo" class="inputs"/>
+                        <span id="img-url-error" class="error-message"></span>
+                    </div>
+                    <div class="name-rate-input">
+                        <div class="input-name">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" placeholder="Enter player name" />
+                        <span class="error-message" id="error-name"></span>
+                        </div>
+                        <div>
+                        <label for="rating">Rating</label>
+                        <input
+                            type="number"
+                            id="rating"
+                            name="rating"
+                            min="1"
+                            max="99"
+                            class="inputs"
+                            placeholder="Rating"
+                        />
+                        <span class="error-message" id="error-rating"></span>
+                        </div>
+                    </div>
+                    <div class="select-position">
+                    <label for="position">Position</label>
+                    <select id="position">
+                        <option></option>
+                        <option value="Defender central (CB)">Defender central (CB)</option>
+                        <option value="Defender full-back left (LB)">Defender full-back left (LB)</option>
+                        <option value="Defender full-back right (RB)">Defender full-back right (RB)</option>
+                        <option value="Defender Midfielder central (CM)">Defender Midfielder central (CM)</option>
+                        <option value="Defender attacking midfielder (CM)">Defender attacking midfielder (CM)</option>
+                        <option value="Central striker (ST)">Central striker (ST)</option>
+                        <option value="Winger left (LW)">Winger left (LW)</option>
+                        <option value="Winger right (RW)">Winger right (RW)</option>
+                        <option value="Goalkeeper (GK)">Goalkeeper (GK)</option>
+                    </select>
+                    <span id="position-error" class="error-message"></span>
+                    </div>
 
+                    <div class="select-nationality">
+                    <label for="nationality">Nationality</label>
+                    <select id="nationality">
+                        <option></option>
+                        <option value="afghanistan">Afghanistan</option>
+                        <option value="albania">Albania</option>
+                        <option value="algeria">Algeria</option>
+                        <option value="argentina">Argentina</option>
+                        <option value="australia">Australia</option>
+                        <option value="brazil">Brazil</option>
+                        <option value="canada">Canada</option>
+                        <option value="china">China</option>
+                        <option value="egypt">Egypt</option>
+                        <option value="france">France</option>
+                        <option value="germany">Germany</option>
+                        <option value="india">India</option>
+                        <option value="italy">Italy</option>
+                        <option value="japan">Japan</option>
+                        <option value="mexico">Mexico</option>
+                        <option value="morocco">Morocco</option>
+                        <option value="russia">Russia</option>
+                        <option value="saudi-arabia">Saudi Arabia</option>
+                        <option value="spain">Spain</option>
+                        <option value="united-states">United States</option>
+                    </select>
+                    <span id="nationality-error" class="error-message"></span>
+                    </div>
+
+                    <div class="select-club">
+                    <label for="club">Club</label>
+                    <select id="club">
+                        <option></option>
+                        <option value="real-madrid">Real Madrid</option>
+                        <option value="barcelona">FC Barcelona</option>
+                        <option value="manchester-united">Manchester United</option>
+                        <option value="manchester-city">Manchester City</option>
+                        <option value="bayern-munich">Bayern Munich</option>
+                        <option value="paris-saint-germain">
+                        Paris Saint-Germain (PSG)
+                        </option>
+                        <option value="liverpool">Liverpool FC</option>
+                        <option value="chelsea">Chelsea FC</option>
+                        <option value="juventus">Juventus</option>
+                        <option value="inter-milan">Inter Milan</option>
+                        <option value="ac-milan">AC Milan</option>
+                        <option value="arsenal">Arsenal FC</option>
+                        <option value="ajax">Ajax</option>
+                        <option value="atletico-madrid">Atlético Madrid</option>
+                        <option value="dortmund">Borussia Dortmund</option>
+                        <option value="tottenham">Tottenham Hotspur</option>
+                    </select>
+                    <span id="club-error" class="error-message"></span>
+                    </div>
+
+                    <div class="formation"></div>
+                    <!-- <div class="stats-form">
+                        <div>
+                        <label for="pace">pace</label>
+                        <input
+                            type="number"
+                            id="pace"
+                            name="pace"
+                            min="1"
+                            max="100"
+                            placeholder="Pace"
+                            class="inputs"
+                        />
+                        <span class="error-message" id="error-pace"></span>
+                        </div>
+            
+                        <div>
+                        <label for="shooting">shooting</label>
+                        <input
+                            type="number"
+                            id="shooting"
+                            name="shooting"
+                            min="1"
+                            max="99"
+                            class="inputs"
+                            placeholder="Shooting"
+                        />
+                        <span class="error-message" id="error-shooting"></span>
+                        </div>
+                        <div>
+                        <label for="passing">passing</label>
+                        <input
+                            type="number"
+                            id="passing"
+                            name="passing"
+                            min="1"
+                            max="99"
+                            class="inputs"
+                            placeholder="Passing"
+                        />
+                        <span class="error-message" id="error-passing"></span>
+                        </div>
+                        <div>
+                        <label for="dribbling">dribbling</label>
+                        <input
+                            type="number"
+                            id="dribbling"
+                            name="dribbling"
+                            min="1"
+                            max="99"
+                            class="inputs"
+                            placeholder="Dribbling"
+                        />
+                        <span class="error-message" id="error-dribbling"></span>
+                        </div>
+                        <div>
+                        <label for="defending">defending</label>
+                        <input
+                            type="number"
+                            id="defending"
+                            name="defending"
+                            min="1"
+                            max="99"
+                            class="inputs"
+                            placeholder="Defending"
+                        />
+                        <span class="error-message" id="error-defending"></span>
+                        </div>
+                        <div>
+                        <label for="physical">physical</label>
+                        <input
+                            type="number"
+                            id="physical"
+                            name="physical"
+                            min="1"
+                            max="99"
+                            class="inputs"
+                            placeholder="Physical"
+                        />
+                        <span class="error-message" id="error-physical"></span>
+                        </div>
+                    </div> -->
+                    <div id="errorMessages"></div>
+                    <button
+                        type="submit"
+                        id="submit-form-btn"
+                        class="submit-form-btn"
+                        onclick="validateForm()"
+                    >
+                        Add player
+                    </button>
+                    </div>
+                </div>
+                </div>
+            
                 <div>
-                    <button class="show-button">Show all players</button>
+                <button class="show-button">Show all players</button>
                 </div>
-
+            
                 <div class="section">
-                    <h2>Formation</h2>
-
-                    <select>
-                        <option>4-3-3</option>
-                        <option>4-4-2</option>
-                        <option>3-5-2</option>
-                    </select>
+                <h2>Formation</h2>
+            
+                <select>
+                    <option>4-3-3</option>
+                </select>
                 </div>
-
-                <hr>
-                
+                <hr />
                 <div class="section">
-                    <h2>Build Up Style</h2>
-                    <select>
-                        <option>Balanced</option>
-                        <option>Direct</option>
-                        <option>Possession</option>
-                    </select>
-                    <p>
-                        Players will vary between forward runs and coming short. The team's transition to their
-                        in-possession shape will be steady rather than sudden.
-                    </p>
+                <h2>Badge Style</h2>
+                <select>
+                    <option>Badge Gold</option>
+                    <option>Badge Total ruch</option>
+                    <option>Ballon d'or</option>
+
+                </select>
+                <p>
+                    Players will vary between forward runs and coming short. The team's
+                    transition to their in-possession shape will be steady rather than
+                    sudden.
+                </p>
                 </div>
-                <hr>
+                <hr />
                 <div class="section">
-                    <h2>Defensive Approach</h2>
-                    <select>
-                        <option>Aggressive</option>
-                        <option>Conservative</option>
-                    </select>
-                    <p>
-                        The most front-footed defensive approach, adopting a high line that focuses on applying
-                        press after losing possession, and setting offside traps. Uses more stamina.
-                    </p>
+                <h2>Defensive Approach</h2>
+                <select>
+                    <option>Aggressive</option>
+                </select>
+                <p>
+                    The most front-footed defensive approach, adopting a high line that
+                    focuses on applying press after losing possession, and setting offside
+                    traps. Uses more stamina.
+                </p>
                 </div>
-                
             </div>
-        </div>
     </div>
 
     <script src="../assets/scripts/main.js"></script>
