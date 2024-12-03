@@ -82,41 +82,49 @@ function validateForm() {
     });
 
     const fields = [
-        { id: 'file-upload-flag', errorId: 'flag-icon-error', errorMsg: 'Flag is required.' },
-        { id: 'file-upload-logo', errorId: 'logo-icon-error', errorMsg: 'Flag is required.' },
-        { id: 'name', errorId: 'error-name', errorMsg: 'Name is required.' },
-        { id: 'position', errorId: 'position-error', errorMsg: 'Position is required.' },
-        { id: 'nationality', errorId: 'nationality-error', errorMsg: 'Nationality is required.' },
-        { id: 'club', errorId: 'club-error', errorMsg: 'Club is required.' },
-        { id: 'photo', errorId: 'img-url-error', errorMsg: 'Player photo URL is required.' },
-        { id: 'pace' , errorId: 'error-pace', errorMsg: 'Pace is required.' },
-        { id: 'dribbling' , errorId: 'error-dribbling', errorMsg: 'Dribbling is required.' },
-        { id: 'passing' , errorId: 'error-passing', errorMsg: 'Passing is required.' },
-        { id: 'shooting' , errorId: 'error-shooting', errorMsg: 'Shooting is required.' },
-        { id: 'defending' , errorId: 'error-defending', errorMsg: 'Defending is required.' },
-        { id: 'physical' , errorId: 'error-physical', errorMsg: 'Physical is required.' },
-        
-        { id: 'handling' , errorId: 'hand-error', errorMsg: 'Handling is required.' },
-        { id: 'kicking' , errorId: 'kick-error', errorMsg: 'Kicking is required.' },
-        { id: 'positioning' , errorId: 'pos-error', errorMsg: 'Positioning is required.' },
-        { id: 'reflexes' , errorId: 'ref-error', errorMsg: 'Reflexes is required.' },
-        { id: 'speed' , errorId: 'speed-error', errorMsg: 'Speed is required.' },
+        { id: "file-upload-flag", errorId: "flag-icon-error", errorMsg: "Flag is required." },
+        { id: "file-upload-logo", errorId: "logo-icon-error", errorMsg: "Flag is required." },
+        { id: "name", errorId: "error-name", errorMsg: "Name is required." },
+        { id: "position", errorId: "position-error", errorMsg: "Position is required." },
+        { id: "nationality", errorId: "nationality-error", errorMsg: "Nationality is required." },
+        { id: "club", errorId: "club-error", errorMsg: "Club is required." },
+        { id: "photo", errorId: "img-url-error", errorMsg: "Player photo URL is required." },
+        { id: "pace" , errorId: "error-pace", errorMsg: "Pace is required." },
+        { id: "dribbling" , errorId: "error-dribbling", errorMsg: "Dribbling is required." },
+        { id: "passing" , errorId: "error-passing", errorMsg: "Passing is required." },
+        { id: "shooting" , errorId: "error-shooting", errorMsg: "Shooting is required." },
+        { id: "defending" , errorId: "error-defending", errorMsg: "Defending is required." },
+        { id: "physical" , errorId: "error-physical", errorMsg: "Physical is required." },
+        { id: "handling" , errorId: "error-handling", errorMsg: "Handling is required." },
+        { id: "kicking" , errorId: "error-kicking", errorMsg: "Kicking is required." },
+        { id: "positioning" , errorId: "error-positioning", errorMsg: "Positioning is required." },
+        { id: "reflexes" , errorId: "error-reflexes", errorMsg: "Reflexes is required." },
+        { id: "speed" , errorId: "error-speed", errorMsg: "Speed is required." },
     ];
 
     fields.forEach(field => {
-        const value = document.getElementById(field.id).value.trim();
-        if (!value) {
-            document.getElementById(field.errorId).innerText = field.errorMsg;
-            document.getElementById(field.errorId).style.color = 'red';
+        const input = document.getElementById(field.id);
+        
+        if (!input.value.trim()) {
+
+            console.log(input);
+            
+
+            let span = document.createElement('span')
+            span.id = field.errorId
+            span.className = "error-message"
+            span.innerText = field.errorMsg
+            input.parentNode.appendChild(span)
+            span.style.color= 'red'
             errors = true;
         }
     });
 
-    const numericFields = ['rating', 'pace', 'shooting', 'passing', 'dribbling', 'defending', 'physical'];
+    const numericFields = ["rating", "pace", "shooting", "passing", "dribbling", "defending", "physical", "handling", "kicking", "positioning", "reflexes", "speed"];
     numericFields.forEach(field => {
         const value = parseInt(document.getElementById(field).value);
-        if (isNaN(value) || value < 1 || value > 99) {
-            document.getElementById(`error-${field}`).innerText = `${field.charAt(0).toUpperCase() + field.slice(1)} must be between 1 and 99.`;
+        if (isNaN(value) || value < 20 || value > 99) {
+            document.getElementById(`error-${field}`).innerText = `${field.charAt(0).toUpperCase() + field.slice(1)} must be between 20 and 99.`;
             document.getElementById(`error-${field}`).style.color = 'red';
             errors = true;
         }
@@ -132,7 +140,7 @@ function validateForm() {
     return !errors;
 }
 
-document.getElementById('submit-form-btn').addEventListener('click', (e) => {
+document.getElementById('myForm').addEventListener('submit', (e) => {
     e.preventDefault();
     if (validateForm()) {
         alert('Form submitted successfully!');
@@ -152,31 +160,30 @@ function updateFieldsBasedOnPosition(position) {
             <div>
                 <label for="handling">Handling</label>
                 <input type="number" id="handling" name="handling" min="1" max="99" class="inputs" placeholder="Handling">
-                <span id="hand-error" class="error-message"></span>
+                <span id="error-handling" class="error-message"></span>
             </div>
             <div>
                 <label for="kicking">Kicking</label>
                 <input type="number" id="kicking" name="kicking" min="1" max="99" class="inputs" placeholder="Kicking">
-                <span id="kick-error" class="error-message"></span>
+                <span id="error-kicking" class="error-message"></span>
             </div>
             <div>
                 <label for="reflexes">Reflexes</label>
                 <input type="number" id="reflexes" name="reflexes" min="1" max="99" class="inputs" placeholder="Reflexes">
-                <span id="ref-error" class="error-message"></span>
+                <span id="error-reflexes" class="error-message"></span>
             </div>
             <div>
                 <label for="speed">Speed</label>
                 <input type="number" id="speed" name="speed" min="1" max="99" class="inputs" placeholder="Speed">
-                <span id="speed-error" class="error-message"></span>
+                <span id="error-speed" class="error-message"></span>
             </div>
             <div>
                 <label for="positioning">Positioning</label>
                 <input type="number" id="positioning" name="positioning" min="1" max="99" class="inputs" placeholder="Positioning">
-                <span id="pos-error" class="error-message"></span>
+                <span id="error-positioning" class="error-message"></span>
             </div>
         </div>
     `;
-
     const defaultFields = `
         <div class="stats-form">
             <div>
@@ -219,7 +226,6 @@ document.getElementById("position").addEventListener("change", function () {
     updateFieldsBasedOnPosition(this.value);
 });
 
-
 function fetchPlayersFromJSON() {
     fetch('players.json')
         .then((response) => response.json())
@@ -236,10 +242,9 @@ function displayPlayers() {
             const players = data.players;
             const playersList = document.getElementById('players-list');
             playersList.innerHTML = '';
-
             players.forEach(player => {
                 const playerCard = `
-                <div class="card">
+                <div class="card" >
                     <div class="photo">
                         <img src="${player.photo}" alt="${player.name}">
                     </div>
@@ -276,11 +281,105 @@ function displayPlayers() {
 }
 
 document.querySelector('.show-button').addEventListener('click', () => {
-    document.getElementById('players-popup').classList.add('active');
+    document.getElementById('show-players-popup').classList.add('active');
     displayPlayers();
 });
 
 document.querySelector('.close-btn-display-all').addEventListener('click', () => {
-    document.getElementById('players-popup').classList.remove('active');
+    document.getElementById('show-players-popup').classList.remove('active');
+});
+
+function reservePlayers() {
+    displayPlayers();
+}
+
+document.querySelector('.reserve-button').addEventListener('click', () => {
+    document.getElementById('reserve-players-popup').classList.add('active');
+    reservePlayers()
+});
+
+document.querySelector('.close-btn-reserve').addEventListener('click', () => {
+    document.getElementById('reserve-players-popup').classList.remove('active');
+});
+
+let playersData = [];
+
+function updateFieldsBasedOnPosition(position) {
+    const numericFieldsContainer = document.querySelector(".formation");
+
+    if (!numericFieldsContainer) {
+        console.error("Le conteneur '.formation' est introuvable !");
+        return;
+    }
+
+    const goalkeeperFields = `
+        <div class="stats-form">
+            <div>
+                <label for="handling">Handling</label>
+                <input type="number" id="handling" name="handling" min="1" max="99" class="inputs" placeholder="Handling">
+                <span id="error-handling" class="error-message"></span>
+            </div>
+            <div>
+                <label for="kicking">Kicking</label>
+                <input type="number" id="kicking" name="kicking" min="1" max="99" class="inputs" placeholder="Kicking">
+                <span id="error-kicking" class="error-message"></span>
+            </div>
+            <div>
+                <label for="reflexes">Reflexes</label>
+                <input type="number" id="reflexes" name="reflexes" min="1" max="99" class="inputs" placeholder="Reflexes">
+                <span id="error-reflexes" class="error-message"></span>
+            </div>
+            <div>
+                <label for="speed">Speed</label>
+                <input type="number" id="speed" name="speed" min="1" max="99" class="inputs" placeholder="Speed">
+                <span id="error-speed" class="error-message"></span>
+            </div>
+            <div>
+                <label for="positioning">Positioning</label>
+                <input type="number" id="positioning" name="positioning" min="1" max="99" class="inputs" placeholder="Positioning">
+                <span id="error-positioning" class="error-message"></span>
+            </div>
+        </div>
+    `;
+    const defaultFields = `
+        <div class="stats-form">
+            <div>
+                <label for="pace">Pace</label>
+                <input type="number" id="pace" name="pace" min="1" max="99" class="inputs" placeholder="Pace">
+                <span class="error-message" id="error-pace"></span>
+            </div>
+            <div>
+                                <label for="shooting">Shooting</label>
+                <input type="number" id="shooting" name="shooting" min="1" max="99" class="inputs" placeholder="Shooting">
+                <span class="error-message" id="error-shooting"></span>
+            </div>
+            <div>
+                <label for="passing">Passing</label>
+                <input type="number" id="passing" name="passing" min="1" max="99" class="inputs" placeholder="Passing">
+                <span class="error-message" id="error-passing"></span>
+            </div>
+            <div>
+                <label for="dribbling">Dribbling</label>
+                <input type="number" id="dribbling" name="dribbling" min="1" max="99" class="inputs" placeholder="Dribbling">
+                <span class="error-message" id="error-dribbling"></span>
+            </div>
+            <div>
+                <label for="defending">Defending</label>
+                <input type="number" id="defending" name="defending" min="1" max="99" class="inputs" placeholder="Defending">
+                <span class="error-message" id="error-defending"></span>
+            </div>
+            <div>
+                <label for="physical">Physical</label>
+                <input type="number" id="physical" name="physical" min="1" max="99" class="inputs" placeholder="Physical">
+                <span class="error-message" id="error-physical"></span>
+            </div>
+        </div>
+    `;
+
+    numericFieldsContainer.innerHTML = position === "Goalkeeper (GK)" ? goalkeeperFields : defaultFields;
+}
+
+document.getElementById("position").addEventListener("change", function () {
+    updateFieldsBasedOnPosition(this.value);
 });
 

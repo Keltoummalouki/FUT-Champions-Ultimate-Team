@@ -12,7 +12,7 @@
 <body>
 
     <header class="navbar">
-        <img src="assets/media/images/logo PNG.png" class="logo"></img>
+        <img src="assets/media/images/logo PNG.png" class="logo-img"></img>
         <button id="theme-switcher" class="theme-btn">🌙</button>
     </header>
 
@@ -22,6 +22,14 @@
 
             <img src="assets/media/images/badge_gold.png" alt="card-gk" class="card-gk">
             <img src="assets/media/images/plus.png" alt="card-gk-plus" class="card-gk-plus">
+            <div class="absolute -right-4 top-3" > 
+                <div class="cursor-pointer text-[rgb(247,231,195)]"  onclick="edit()">
+                <i class="fa-solid fa-pen-to-square" ></i>
+                </div>
+                <div class="cursor-pointer text-[#F7E7C3]" data-info="action-btn"  onclick="handleDelete(event)">
+                    <i class="fa-solid fa-trash" data-info="action-icon"></i>
+                </div>
+            </div>
 
 
             <img src="assets/media/images/badge_gold.png" alt="card-lm" class="card-lb">
@@ -46,31 +54,8 @@
             <img src="assets/media/images/plus.png" alt="card-rw-plus" class="card-rw-plus">
             <img src="assets/media/images/badge_gold.png" alt="card-st" class="card-st">
             <img src="assets/media/images/plus.png" alt="card-st-plus" class="card-st-plus">
-
-            <div class="reserve">
-                <img src="assets/media/images/badge_gold.png" alt="card-gk" class="card">
-
-                <img src="assets/media/images/badge_gold.png" alt="card-gk" class="card">
-                <img src="assets/media/images/badge_gold.png" alt="card-gk" class="card">
-
-                <img src="assets/media/images/badge_gold.png" alt="card-lm" class="card">
-                <img src="assets/media/images/badge_gold.png" alt="card-cm-left" class="card">
-                <img src="assets/media/images/badge_gold.png" alt="card-cm-right" class="card">
-                <img src="assets/media/images/badge_gold.png" alt="card-rm" class="card">
-
-                <img src="assets/media/images/badge_gold.png" alt="card-cb-centre" class="card">
-                <img src="assets/media/images/badge_gold.png" alt="card-cb-left" class="card">
-                <img src="assets/media/images/badge_gold.png" alt="card-cb-right" class="card">
-
-                <img src="assets/media/images/badge_gold.png" alt="card-lw" class="card">
-                <img src="assets/media/images/badge_gold.png" alt="card-rw" class="card">
-                <img src="assets/media/images/badge_gold.png" alt="card-st" class="card">
-                <img src="assets/media/images/badge_gold.png" alt="card-st" class="card">
-                <img src="assets/media/images/badge_gold.png" alt="card-st" class="card">
-                <img src="assets/media/images/badge_gold.png" alt="card-st" class="card">
-            </div>
-
         </div>
+        
         <div class="options">
             <div class="options-container">
                 <div>
@@ -78,7 +63,7 @@
                 </div>
                 <div class="form-popup">
                 <button class="close-btn">&times;</button>
-                <div class="form">
+                <form id="myForm" class="form">
                     <h2>Player information</h2>
                     <div class="form-elements">
                     <div class="upload-img-container">        
@@ -215,14 +200,27 @@
                         Add player
                     </button>
                     </div>
-                </div>
+                </form>
                 </div>
             <div>
+
+                <div>
+                    <button class="reserve-button">Reserve players</button>
+                    
+                </div>
+
+                <div id="reserve-players-popup" class="popup">
+                    <div class="popup-content">
+                        <span class="close-btn-reserve">&times;</span>
+                        <div id="players-list"></div>
+                    </div>
+                </div>
+
                 <div>
                     <button class="show-button">Show all players</button>
                 </div>
 
-                <div id="players-popup" class="popup">
+                <div id="show-players-popup" class="popup">
                     <div class="popup-content">
                         <span class="close-btn-display-all">&times;</span>
                         <div id="players-list"></div>
@@ -230,13 +228,14 @@
                 </div>
             </div>
 
-            
                 <div class="section">
-                <h2>Formation</h2>
-            
-                <select>
-                    <option>4-3-3</option>
-                </select>
+                    <div class="formation-option">
+                        <h2>Formation</h2>
+                        <select>
+                            <option>4-3-3</option>
+                        </select>    
+                    </div>
+
                 </div>
                 <hr />
                 <div class="section">
