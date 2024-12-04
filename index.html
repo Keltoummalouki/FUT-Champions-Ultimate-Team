@@ -22,252 +22,276 @@
 
             <img src="assets/media/images/badge_gold.png" alt="card-gk" class="card-gk">
             <img src="assets/media/images/plus.png" alt="card-gk-plus" class="card-gk-plus">
-            <div class="absolute -right-4 top-3" > 
-                <div class="cursor-pointer text-[rgb(247,231,195)]"  onclick="edit()">
-                <i class="fa-solid fa-pen-to-square" ></i>
+            <div class="absolute -right-4 top-3">
+                <div class="cursor-pointer text-[rgb(247,231,195)]" onclick="edit()">
+                    <i class="fa-solid fa-pen-to-square"></i>
                 </div>
-                <div class="cursor-pointer text-[#F7E7C3]" data-info="action-btn"  onclick="handleDelete(event)">
+                <div class="cursor-pointer text-[#F7E7C3]" data-info="action-btn" onclick="handleDelete(event)">
                     <i class="fa-solid fa-trash" data-info="action-icon"></i>
                 </div>
             </div>
 
 
-            <img src="assets/media/images/badge_gold.png" alt="card-lm" class="card-lb">
-            <img src="assets/media/images/plus.png" alt="card-lm-plus" class="card-lb-plus">
-            <img src="assets/media/images/badge_gold.png" alt="card-cm-left" class="card-cb-left">
-            <img src="assets/media/images/plus.png" alt="card-cm-left-plus" class="card-cb-left-plus">
-            <img src="assets/media/images/badge_gold.png" alt="card-cm-right" class="card-cb-right">
-            <img src="assets/media/images/plus.png" alt="card-cm-right-plus" class="card-cb-right-plus">
-            <img src="assets/media/images/badge_gold.png" alt="card-rm" class="card-rb">
-            <img src="assets/media/images/plus.png" alt="card-rm-plus" class="card-rb-plus">
+            <div id="players-list">
+                <div id="lb">
+                    <img src="assets/media/images/badge_gold.png" alt="card-lm" class="card-lb">
+                    <img src="assets/media/images/plus.png" alt="card-lm-plus" class="card-lb-plus" id="gk">
+                    <div class="popupJoueurs">
+                        <button class="close-btn-joueurs">&times;</button>
+                        <div id="player-filter"></div>
+                    </div>
+                </div>
 
-            <img src="assets/media/images/badge_gold.png" alt="card-cb-centre" class="card-cm-centre">
-            <img src="assets/media/images/plus.png" alt="card-cb-centre-plus" class="card-cm-centre-plus">
-            <img src="assets/media/images/badge_gold.png" alt="card-cb-left" class="card-cm-left">
-            <img src="assets/media/images/plus.png" alt="card-cb-left-plus" class="card-cm-left-plus">
-            <img src="assets/media/images/badge_gold.png" alt="card-cb-right" class="card-cm-right">
-            <img src="assets/media/images/plus.png" alt="card-cb-right-plus" class="card-cm-right-plus">
+                <div id="cb-left">
+                    <img src="assets/media/images/badge_gold.png" alt="card-cm-left" class="card-cb-left">
+                    <img src="assets/media/images/plus.png" alt="card-cm-left-plus" class="card-cb-left-plus">
+                </div>
 
-            <img src="assets/media/images/badge_gold.png" alt="card-lw" class="card-lw">
-            <img src="assets/media/images/plus.png" alt="card-lw-plus" class="card-lw-plus">
-            <img src="assets/media/images/badge_gold.png" alt="card-rw" class="card-rw">
-            <img src="assets/media/images/plus.png" alt="card-rw-plus" class="card-rw-plus">
-            <img src="assets/media/images/badge_gold.png" alt="card-st" class="card-st">
-            <img src="assets/media/images/plus.png" alt="card-st-plus" class="card-st-plus">
+                <div id="cb-right">
+                    <img src="assets/media/images/badge_gold.png" alt="card-cm-right" class="card-cb-right">
+                    <img src="assets/media/images/plus.png" alt="card-cm-right-plus" class="card-cb-right-plus">
+                </div>
+
+                <div id="rb">
+                    <img src="assets/media/images/badge_gold.png" alt="card-rm" class="card-rb">
+                    <img src="assets/media/images/plus.png" alt="card-rm-plus" class="card-rb-plus">
+                </div>
+
+                <div id="cm-center">
+                    <img src="assets/media/images/badge_gold.png" alt="card-cb-centre" class="card-cm-centre">
+                    <img src="assets/media/images/plus.png" alt="card-cb-centre-plus" class="card-cm-centre-plus">
+                </div>
+
+                <div id="cm-left">
+                    <img src="assets/media/images/badge_gold.png" alt="card-cb-left" class="card-cm-left">
+                    <img src="assets/media/images/plus.png" alt="card-cb-left-plus" class="card-cm-left-plus">
+                </div>
+
+                <div id="cm-right">
+                    <img src="assets/media/images/badge_gold.png" alt="card-cb-right" class="card-cm-right">
+                    <img src="assets/media/images/plus.png" alt="card-cb-right-plus" class="card-cm-right-plus">
+                </div>
+
+                <div id="lw">
+                    <img src="assets/media/images/badge_gold.png" alt="card-lw" class="card-lw">
+                    <img src="assets/media/images/plus.png" alt="card-lw-plus" class="card-lw-plus">
+                </div>
+
+                <div id="rw">
+                    <img src="assets/media/images/badge_gold.png" alt="card-rw" class="card-rw">
+                    <img src="assets/media/images/plus.png" alt="card-rw-plus" class="card-rw-plus">
+                </div>
+
+                <div id="st">
+                    <img src="assets/media/images/badge_gold.png" alt="card-st" class="card-st">
+                    <img src="assets/media/images/plus.png" alt="card-st-plus" class="card-st-plus">
+                </div>
+            </div>
         </div>
-        
+
+
         <div class="options">
             <div class="options-container">
                 <div>
-                <button class="add-button" onclick="openPopup()">Add a new player</button>
+                    <button class="add-button" onclick="openPopup()">Add a new player</button>
                 </div>
                 <div class="form-popup">
-                <button class="close-btn">&times;</button>
-                <form id="myForm" class="form">
-                    <h2>Player information</h2>
-                    <div class="form-elements">
-                    <div class="upload-img-container">        
-                        <div class="upload-img-flag">
-                        <div>
-                            <label for="flag">Nationality Flag</label>
-                        </div>
-                        <div>
-                            <label for="file-upload-flag" class="custom-file-upload"
-                            >Flag</label
-                            >
-                            <input id="file-upload-flag" type="file" />
-                            <span id="flag-icon-error" class="error-message"></span>
-                        </div>
+                    <button class="close-btn">&times;</button>
+                    <form id="myForm" class="form">
+                        <h2>Player information</h2>
+                        <div class="form-elements">
+                            <div class="upload-img-container">
+                                <div class="upload-img-flag">
+                                    <div>
+                                        <label for="flag">Nationality Flag</label>
+                                    </div>
+                                    <div id="divFlag">
+                                        <label for="flag" class="custom-file-upload">Flag</label>
+                                        <input id="flag" type="file" />
+                                        <span id="erreur-flag" class="erreur-message"></span>
+                                    </div>
 
+                                </div>
+
+                                <div class="upload-img-logo">
+                                    <div>
+                                        <label for="logo">Club Logo</label>
+                                    </div>
+                                    <div id="divLogo">
+                                        <label for="logo" class="custom-file-upload">Logo</label>
+                                        <input id="logo" type="file" />
+                                        <span id="erreur-logo" class="erreur-message"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="divPhoto">
+                                <label for="photo">Player photo</label>
+                                <input type="url" placeholder="Player photo URL" id="photo" class="inputs" />
+                                <span id="erreur-image" class="erreur-message"></span>
+                            </div>
+                            <div class="name-rate-input">
+                                <div class="input-name" id="divName">
+                                    <label for="name">Name</label>
+                                    <input type="text" id="name" placeholder="Enter player name" />
+                                    <span class="erreur-message" id="erreur-name"></span>
+                                </div>
+                                <div id="divRating">
+                                    <label for="rating">Rating</label>
+                                    <input type="number" id="rating" name="rating" min="1" max="99" class="inputs"
+                                        placeholder="Rating" />
+                                    <span class="erreur-message" id="erreur-rating"></span>
+                                </div>
+                            </div>
+                            <div class="select-position" id="divPosition">
+                                <label for="position">Position</label>
+                                <select id="position">
+                                    <option></option>
+                                    <option value="Defender central (CB)">Defender central (CB)</option>
+                                    <option value="Defender full-back left (LB)">Defender full-back left (LB)</option>
+                                    <option value="Defender full-back right (RB)">Defender full-back right (RB)</option>
+                                    <option value="Defender Midfielder central (CM)">Defender Midfielder central (CM)
+                                    </option>
+                                    <option value="Defender attacking midfielder (CM)">Defender attacking midfielder
+                                        (CM)</option>
+                                    <option value="Central striker (ST)">Central striker (ST)</option>
+                                    <option value="Winger left (LW)">Winger left (LW)</option>
+                                    <option value="Winger right (RW)">Winger right (RW)</option>
+                                    <option value="Goalkeeper (GK)">Goalkeeper (GK)</option>
+                                </select>
+                                <span id="erreur-position" class="erreur-message"></span>
+                            </div>
+
+                            <div class="select-nationality" id="divNationality">
+                                <label for="nationality">Nationality</label>
+                                <select id="nationality">
+                                    <option></option>
+                                    <option value="afghanistan">Afghanistan</option>
+                                    <option value="albania">Albania</option>
+                                    <option value="algeria">Algeria</option>
+                                    <option value="argentina">Argentina</option>
+                                    <option value="australia">Australia</option>
+                                    <option value="brazil">Brazil</option>
+                                    <option value="canada">Canada</option>
+                                    <option value="china">China</option>
+                                    <option value="egypt">Egypt</option>
+                                    <option value="france">France</option>
+                                    <option value="germany">Germany</option>
+                                    <option value="india">India</option>
+                                    <option value="italy">Italy</option>
+                                    <option value="japan">Japan</option>
+                                    <option value="mexico">Mexico</option>
+                                    <option value="morocco">Morocco</option>
+                                    <option value="russia">Russia</option>
+                                    <option value="saudi-arabia">Saudi Arabia</option>
+                                    <option value="spain">Spain</option>
+                                    <option value="united-states">United States</option>
+                                </select>
+                                <span id="erreur-nationality" class="erreur-message"></span>
+                            </div>
+
+                            <div class="select-club" id="divClub">
+                                <label for="club">Club</label>
+                                <select id="club">
+                                    <option></option>
+                                    <option value="real-madrid">Real Madrid</option>
+                                    <option value="barcelona">FC Barcelona</option>
+                                    <option value="manchester-united">Manchester United</option>
+                                    <option value="manchester-city">Manchester City</option>
+                                    <option value="bayern-munich">Bayern Munich</option>
+                                    <option value="paris-saint-germain">
+                                        Paris Saint-Germain (PSG)
+                                    </option>
+                                    <option value="liverpool">Liverpool FC</option>
+                                    <option value="chelsea">Chelsea FC</option>
+                                    <option value="juventus">Juventus</option>
+                                    <option value="inter-milan">Inter Milan</option>
+                                    <option value="ac-milan">AC Milan</option>
+                                    <option value="arsenal">Arsenal FC</option>
+                                    <option value="ajax">Ajax</option>
+                                    <option value="atletico-madrid">Atlético Madrid</option>
+                                    <option value="dortmund">Borussia Dortmund</option>
+                                    <option value="tottenham">Tottenham Hotspur</option>
+                                </select>
+                                <span id="erreur-club" class="erreur-message"></span>
+                            </div>
+
+                            <div class="formation"></div>
+                            <!-- <div id="errorMessages"></div> -->
+                            <button type="button" id="submit-btn" class="submit-form-btn">
+                                Add player
+                            </button>
                         </div>
-            
-                        <div class="upload-img-logo">
-                        <div>
-                            <label for="logo">Club Logo</label>
-                        </div>
-                        <div>
-                            <label for="file-upload-logo" class="custom-file-upload"
-                            >Logo</label
-                            >
-                            <input id="file-upload-logo" type="file" />
-                            <span id="logo-icon-error" class="error-message"></span>
-                        </div>
-                        </div>
-                    </div>
+                    </form>
+                </div>
+                <div>
+
                     <div>
-                        <label for="photo">Player photo</label>
-                        <input type="url" placeholder="Player photo URL" id="photo" class="inputs"/>
-                        <span id="img-url-error" class="error-message"></span>
+                        <button class="reserve-button">Reserve players</button>
                     </div>
-                    <div class="name-rate-input">
-                        <div class="input-name">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" placeholder="Enter player name" />
-                        <span class="error-message" id="error-name"></span>
-                        </div>
-                        <div>
-                        <label for="rating">Rating</label>
-                        <input
-                            type="number"
-                            id="rating"
-                            name="rating"
-                            min="1"
-                            max="99"
-                            class="inputs"
-                            placeholder="Rating"
-                        />
-                        <span class="error-message" id="error-rating"></span>
+
+                    <div id="reserve-players-popup" class="popup">
+                        <div class="popup-content">
+                            <span class="close-btn-reserve">&times;</span>
+                            <div id="player-lists">
+                
+                            </div>
                         </div>
                     </div>
-                    <div class="select-position">
-                    <label for="position">Position</label>
-                    <select id="position">
-                        <option></option>
-                        <option value="Defender central (CB)">Defender central (CB)</option>
-                        <option value="Defender full-back left (LB)">Defender full-back left (LB)</option>
-                        <option value="Defender full-back right (RB)">Defender full-back right (RB)</option>
-                        <option value="Defender Midfielder central (CM)">Defender Midfielder central (CM)</option>
-                        <option value="Defender attacking midfielder (CM)">Defender attacking midfielder (CM)</option>
-                        <option value="Central striker (ST)">Central striker (ST)</option>
-                        <option value="Winger left (LW)">Winger left (LW)</option>
-                        <option value="Winger right (RW)">Winger right (RW)</option>
-                        <option value="Goalkeeper (GK)">Goalkeeper (GK)</option>
-                    </select>
-                    <span id="position-error" class="error-message"></span>
+
+                    <div>
+                        <button class="show-button">Show all players</button>
                     </div>
 
-                    <div class="select-nationality">
-                    <label for="nationality">Nationality</label>
-                    <select id="nationality">
-                        <option></option>
-                        <option value="afghanistan">Afghanistan</option>
-                        <option value="albania">Albania</option>
-                        <option value="algeria">Algeria</option>
-                        <option value="argentina">Argentina</option>
-                        <option value="australia">Australia</option>
-                        <option value="brazil">Brazil</option>
-                        <option value="canada">Canada</option>
-                        <option value="china">China</option>
-                        <option value="egypt">Egypt</option>
-                        <option value="france">France</option>
-                        <option value="germany">Germany</option>
-                        <option value="india">India</option>
-                        <option value="italy">Italy</option>
-                        <option value="japan">Japan</option>
-                        <option value="mexico">Mexico</option>
-                        <option value="morocco">Morocco</option>
-                        <option value="russia">Russia</option>
-                        <option value="saudi-arabia">Saudi Arabia</option>
-                        <option value="spain">Spain</option>
-                        <option value="united-states">United States</option>
-                    </select>
-                    <span id="nationality-error" class="error-message"></span>
+                    <div id="show-players-popup" class="popup">
+                        <div class="popup-content">
+                            <span class="close-btn-display-all">&times;</span>
+                            <div id="players-lists">
+                
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="select-club">
-                    <label for="club">Club</label>
-                    <select id="club">
-                        <option></option>
-                        <option value="real-madrid">Real Madrid</option>
-                        <option value="barcelona">FC Barcelona</option>
-                        <option value="manchester-united">Manchester United</option>
-                        <option value="manchester-city">Manchester City</option>
-                        <option value="bayern-munich">Bayern Munich</option>
-                        <option value="paris-saint-germain">
-                        Paris Saint-Germain (PSG)
-                        </option>
-                        <option value="liverpool">Liverpool FC</option>
-                        <option value="chelsea">Chelsea FC</option>
-                        <option value="juventus">Juventus</option>
-                        <option value="inter-milan">Inter Milan</option>
-                        <option value="ac-milan">AC Milan</option>
-                        <option value="arsenal">Arsenal FC</option>
-                        <option value="ajax">Ajax</option>
-                        <option value="atletico-madrid">Atlético Madrid</option>
-                        <option value="dortmund">Borussia Dortmund</option>
-                        <option value="tottenham">Tottenham Hotspur</option>
-                    </select>
-                    <span id="club-error" class="error-message"></span>
-                    </div>
-
-                    <div class="formation"></div>
-                    <div id="errorMessages"></div>
-                    <button
-                        type="submit"
-                        id="submit-form-btn"
-                        class="submit-form-btn"
-                    >
-                        Add player
-                    </button>
-                    </div>
-                </form>
-                </div>
-            <div>
-
-                <div>
-                    <button class="reserve-button">Reserve players</button>
-                    
-                </div>
-
-                <div id="reserve-players-popup" class="popup">
-                    <div class="popup-content">
-                        <span class="close-btn-reserve">&times;</span>
-                        <div id="players-list"></div>
-                    </div>
-                </div>
-
-                <div>
-                    <button class="show-button">Show all players</button>
-                </div>
-
-                <div id="show-players-popup" class="popup">
-                    <div class="popup-content">
-                        <span class="close-btn-display-all">&times;</span>
-                        <div id="players-list"></div>
-                    </div>
-                </div>
-            </div>
-
+    
                 <div class="section">
                     <div class="formation-option">
                         <h2>Formation</h2>
                         <select>
                             <option>4-3-3</option>
-                        </select>    
+                        </select>
                     </div>
 
                 </div>
                 <hr />
                 <div class="section">
-                <h2>Badge Style</h2>
-                <select>
-                    <option>Badge Gold</option>
-                    <option>Badge Total ruch</option>
-                    <option>Ballon d'or</option>
+                    <h2>Badge Style</h2>
+                    <select>
+                        <option>Badge Gold</option>
+                        <option>Badge Total ruch</option>
+                        <option>Ballon d'or</option>
 
-                </select>
-                <p>
-                    Players will vary between forward runs and coming short. The team's
-                    transition to their in-possession shape will be steady rather than
-                    sudden.
-                </p>
+                    </select>
+                    <p>
+                        Players will vary between forward runs and coming short. The team's
+                        transition to their in-possession shape will be steady rather than
+                        sudden.
+                    </p>
                 </div>
                 <hr />
                 <div class="section">
-                <h2>Defensive Approach</h2>
-                <select>
-                    <option>Aggressive</option>
-                </select>
-                <p>
-                    The most front-footed defensive approach, adopting a high line that
-                    focuses on applying press after losing possession, and setting offside
-                    traps. Uses more stamina.
-                </p>
+                    <h2>Defensive Approach</h2>
+                    <select>
+                        <option>Aggressive</option>
+                    </select>
+                    <p>
+                        The most front-footed defensive approach, adopting a high line that
+                        focuses on applying press after losing possession, and setting offside
+                        traps. Uses more stamina.
+                    </p>
                 </div>
             </div>
-    </div>
+        </div>
 
-    <script src="../assets/scripts/main.js"></script>
+        <script src="../assets/scripts/main.js"></script>
 </body>
 
 </html>
