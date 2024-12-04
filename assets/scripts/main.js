@@ -26,7 +26,6 @@ fetch('players.json')
     const gg = document.querySelector('.popupJoueurs');
     const closePopupJoueurs = document.querySelector('.close-btn-joueurs');    
     
-   
     popupJoueurs.addEventListener('click', () => {
         gg.classList.add('active');
         document.body.classList.add('popup-active');
@@ -345,3 +344,8 @@ document.querySelector('.reserve-button').addEventListener('click', () => {
 document.querySelector('.close-btn-reserve').addEventListener('click', () => {
     document.getElementById('reserve-players-popup').classList.remove('active');
 });
+
+
+    const cont = document.querySelectorAll(".card-cont");
+
+    

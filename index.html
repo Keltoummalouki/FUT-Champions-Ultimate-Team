@@ -20,71 +20,65 @@
         <div class="stadium">
             <img src="assets/media/images/stadium_background.webp" alt="stadium-img" class="background-image">
 
-            <img src="assets/media/images/badge_gold.png" alt="card-gk" class="card-gk">
+            <img src="assets/media/images/badge_gold.png" alt="card-gk" id="card-gk" class="card-cont">
             <img src="assets/media/images/plus.png" alt="card-gk-plus" class="card-gk-plus">
-            <div class="absolute -right-4 top-3">
-                <div class="cursor-pointer text-[rgb(247,231,195)]" onclick="edit()">
-                    <i class="fa-solid fa-pen-to-square"></i>
-                </div>
-                <div class="cursor-pointer text-[#F7E7C3]" data-info="action-btn" onclick="handleDelete(event)">
-                    <i class="fa-solid fa-trash" data-info="action-icon"></i>
-                </div>
+
             </div>
 
 
             <div id="players-list">
                 <div id="lb">
-                    <img src="assets/media/images/badge_gold.png" alt="card-lm" class="card-lb">
-                    <img src="assets/media/images/plus.png" alt="card-lm-plus" class="card-lb-plus" id="gk">
-                    <div class="popupJoueurs">
-                        <button class="close-btn-joueurs">&times;</button>
+                    <img src="assets/media/images/badge_gold.png" alt="card-lm" id="card-lb" class="card-cont">
+                    <img src="assets/media/images/plus.png" alt="card-lm-plus" id="card-lb-plus" id="gk">
+                    <div id="popupJoueurs">
+                        <button id="close-btn-joueurs">&times;</button>
                         <div id="player-filter"></div>
                     </div>
                 </div>
 
                 <div id="cb-left">
-                    <img src="assets/media/images/badge_gold.png" alt="card-cm-left" class="card-cb-left">
-                    <img src="assets/media/images/plus.png" alt="card-cm-left-plus" class="card-cb-left-plus">
+                    <img src="assets/media/images/badge_gold.png" alt="card-cm-left" id="card-cb-left" class="card-cont">
+                    <img src="assets/media/images/plus.png" alt="card-cm-left-plus" id="card-cb-left-plus">
                 </div>
 
                 <div id="cb-right">
-                    <img src="assets/media/images/badge_gold.png" alt="card-cm-right" class="card-cb-right">
-                    <img src="assets/media/images/plus.png" alt="card-cm-right-plus" class="card-cb-right-plus">
+                    <img src="assets/media/images/badge_gold.png" alt="card-cm-right" id="card-cb-right" class="card-cont">
+                    <img src="assets/media/images/plus.png" alt="card-cm-right-plus" id="card-cb-right-plus" class="card-cont">
                 </div>
 
                 <div id="rb">
-                    <img src="assets/media/images/badge_gold.png" alt="card-rm" class="card-rb">
-                    <img src="assets/media/images/plus.png" alt="card-rm-plus" class="card-rb-plus">
+                    <img src="assets/media/images/badge_gold.png" alt="card-rm" id="card-rb" class="card-cont">
+                    <img src="assets/media/images/plus.png" alt="card-rm-plus" id="card-rb-plus">
                 </div>
 
                 <div id="cm-center">
-                    <img src="assets/media/images/badge_gold.png" alt="card-cb-centre" class="card-cm-centre">
-                    <img src="assets/media/images/plus.png" alt="card-cb-centre-plus" class="card-cm-centre-plus">
+                    <img src="assets/media/images/badge_gold.png" alt="card-cb-centre" id="card-cm-centre" class="card-cont">
+                    <img src="assets/media/images/plus.png" alt="card-cb-centre-plus" id="card-cm-centre-plus">
                 </div>
 
                 <div id="cm-left">
-                    <img src="assets/media/images/badge_gold.png" alt="card-cb-left" class="card-cm-left">
-                    <img src="assets/media/images/plus.png" alt="card-cb-left-plus" class="card-cm-left-plus">
+                    <img src="assets/media/images/badge_gold.png" alt="card-cb-left" id="card-cm-left" class="card-cont">
+                    <img src="assets/media/images/plus.png" alt="card-cb-left-plus" id="card-cm-left-plus">
                 </div>
 
                 <div id="cm-right">
-                    <img src="assets/media/images/badge_gold.png" alt="card-cb-right" class="card-cm-right">
-                    <img src="assets/media/images/plus.png" alt="card-cb-right-plus" class="card-cm-right-plus">
+                    <img src="assets/media/images/badge_gold.png" alt="card-cb-right" id="card-cm-right" class="card-cont">
+                    <img src="assets/media/images/plus.png" alt="card-cb-right-plus" id="card-cm-right-plus">
                 </div>
 
                 <div id="lw">
-                    <img src="assets/media/images/badge_gold.png" alt="card-lw" class="card-lw">
-                    <img src="assets/media/images/plus.png" alt="card-lw-plus" class="card-lw-plus">
+                    <img src="assets/media/images/badge_gold.png" alt="card-lw" id="card-lw" class="card-cont">
+                    <img src="assets/media/images/plus.png" alt="card-lw-plus" id="card-lw-plus">
                 </div>
 
                 <div id="rw">
-                    <img src="assets/media/images/badge_gold.png" alt="card-rw" class="card-rw">
-                    <img src="assets/media/images/plus.png" alt="card-rw-plus" class="card-rw-plus">
+                    <img src="assets/media/images/badge_gold.png" alt="card-rw" id="card-rw" class="card-cont">
+                    <img src="assets/media/images/plus.png" alt="card-rw-plus" id="card-rw-plus">
                 </div>
 
                 <div id="st">
-                    <img src="assets/media/images/badge_gold.png" alt="card-st" class="card-st">
-                    <img src="assets/media/images/plus.png" alt="card-st-plus" class="card-st-plus">
+                    <img src="assets/media/images/badge_gold.png" alt="card-st" id="card-st" class="card-cont">
+                    <img src="assets/media/images/plus.png" alt="card-st-plus" id="card-st-plus">
                 </div>
             </div>
         </div>
